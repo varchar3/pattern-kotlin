@@ -12,8 +12,6 @@ import android.util.Log
 3.对象间的关联关系”解耦了抽象和实现之间固有的绑定关系，使得抽象和实现可以沿着各自的维度来变化
 - @disadvantage 1.增加系统的理解与设计难度 2.正确识别出系统中两个独立变化的维度，
 因此其使用范围具有一定的局限性，如何正确识别两个独立维度也需要一定的经验积累
-AMD YES!!!
-Inter NO!!!
  */
 class BridgePattern {
     fun makeAPhone() {
@@ -81,7 +79,6 @@ class BridgePattern {
 
     /**-----------------------------------桥的另一边-------------------------------------------*/
 
-
     interface PhoneShell {
         fun shell()
     }
@@ -113,5 +110,4 @@ class BridgePattern {
             Log.i("phone", "INTER的cpu")
         }
     }
-
 }

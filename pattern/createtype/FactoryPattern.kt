@@ -13,25 +13,24 @@ import com.fbkj.composedemo.Constants.XIAOMI
  */
 class FactoryPattern {
 
-    fun woYaoMakeYiTaiShouJi() {//简单工厂模式
+    fun makeAPhone() {//简单工厂模式
         Factory().makePhone(XIAOMI)
     }
 
-    fun woYaoMakeYiTaiShouJi2(){//方法工厂模式
+    fun makeAPhone2() {//方法工厂模式
         val mf: AbstractFactory = XiaoMiFactory()
         val af: AbstractFactory = AppleFactory()
         mf.makePhone()
         af.makePhone()
     }
 
-    fun woYaoMakeYiTaiShouJi3(){
+    fun makeAPhone3() {
 
     }
 
     interface Phone {
         fun make(name: String)
     }
-
 
 
     class XiaoMi : Phone {
@@ -53,6 +52,7 @@ class FactoryPattern {
             Log.i("make", "制造了一台Iphone")
         }
     }
+
     /**-------------------------------------简单工厂模式-------------------------------------------**/
 
     class Factory { //代工厂
@@ -62,9 +62,11 @@ class FactoryPattern {
             else -> XiaoMi()
         }
     }
+
     /**-------------------------------------方法工厂模式-------------------------------------------**/
 
-    interface AbstractFactory {//抽象工厂模式无疑是吧工厂抽象出来里边定义多种不同类型的作坊
+    interface AbstractFactory {
+        //抽象工厂模式无疑是吧工厂抽象出来里边定义多种不同类型的作坊
         fun makePhone(): Phone//手机小作坊
         fun makeComputer(): Computer//电脑小作坊
     }
@@ -92,10 +94,11 @@ class FactoryPattern {
             return Mac()
         }
     }
+
     /**-------------------------------------抽象工厂模式-------------------------------------------**/
 
     //无非就是两种模式在加一个制作工厂的接口
-    interface Computer{
+    interface Computer {
         fun make(name: String)
     }
 

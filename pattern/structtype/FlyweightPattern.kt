@@ -13,6 +13,11 @@ package com.fbkj.composedemo.pattern.structtype
  */
 class FlyweightPattern {
 
+    fun test(){
+        val f1 = FlyweightFactory().getFlyweight("flyweight")
+        f1.operate(0)
+    }
+
     abstract class Flyweight(var extrinsic: String) {
         //内部状态
         var intrinsic: String = ""
@@ -58,12 +63,6 @@ class FlyweightPattern {
                 pool[extrinsic] = newFlyWeight
                 newFlyWeight
             }
-
-    }
-
-    fun use(){
-        val f1 = FlyweightFactory().getFlyweight("flyweight1")
-        f1.operate(1234)
     }
 
 

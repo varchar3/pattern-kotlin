@@ -15,8 +15,6 @@ package com.fbkj.composedemo.pattern.structtype
 过多使用，系统会非常乱，不易于整体把控
  */
 class AdaptorPattern {
-
-
     fun killSomeOne(){
         val b:Blade = Adapter1()
         b.engage()
@@ -32,11 +30,10 @@ class AdaptorPattern {
     //护手
     open class ArmGuard {
         fun protectArm() {
-            //TODO
         }
     }
 
-    class Adapter1() : Blade, ArmGuard() {
+    class Adapter1 : Blade, ArmGuard() {
         //小剑适配上护手，变成袖剑
         override fun engage() {
             this.protectArm()
@@ -50,7 +47,6 @@ class AdaptorPattern {
 
     open class V220 {
         fun v220interface() {
-        //TODO
         }
     }
 

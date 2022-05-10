@@ -6,14 +6,12 @@ import java.util.*
 /**
 - @author:  LZC
 - @time:  2021/9/3
-- @desc: 观察者模式：	到点就通知我
-当你在凝视深渊的时候，深渊也在凝视你...
+- @desc: 观察者模式：	到点通知,做到一个更新，其它调用均得到响应
  */
 class ObserverPattern {
     fun runObserver() {
         val s: Subject = ConcreteSubject()
         s.addObs(ConcreteObserver())
-        s.doSomething()
     }
 
     abstract class Subject {
@@ -22,10 +20,12 @@ class ObserverPattern {
 
         fun addObs(obs: Observer) {
             this.observe.add(obs)
+            doSomething()
         }
 
         fun removeObs(obs: Observer) {
             this.observe.remove(obs)
+            doSomething()
         }
 
         fun notifyObs() {

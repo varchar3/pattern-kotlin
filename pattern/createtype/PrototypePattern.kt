@@ -3,8 +3,7 @@ package com.fbkj.composedemo.pattern.createtype
 /**
 - @author:  LZC
 - @time:  2021/9/3
-- @desc:原型模式,用于对象的复制：拔一根猴毛，吹出千万个
-copy的！我都是copy的！全都是copy的！！连内裤都是copy的！！！
+- @desc:原型模式,用于对象的复制：一变多
 Kotlin 用数据类（data classes）提供了解决方案。 copy就行了
 注：
 1）某些对象构造非常简单的情况下，就不要滥用原型模式了；
@@ -32,7 +31,7 @@ class PrototypePattern : Cloneable {
     }
 
 
-    class Action:Cloneable{
+    class Action : Cloneable {
         public override fun clone(): Any {
             return super.clone()
         }

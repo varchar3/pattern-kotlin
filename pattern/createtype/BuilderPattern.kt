@@ -40,4 +40,11 @@ class BuilderPattern(builder: MyBuilder) {
             return BuilderPattern(this)
         }
     }
+
+    fun test() {
+        BuilderPattern.MyBuilder("1","2","3")
+            .setD("4")
+            .setE("5")
+            .setF("6").build()
+    }
 }

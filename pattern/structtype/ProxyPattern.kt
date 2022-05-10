@@ -5,8 +5,7 @@ import android.util.Log
 /**
 - @author:  LZC
 - @time:  2021/9/6
-- @desc: 代理模式 AKA 委托模式 :没有资源没时间，得找别人来帮忙
-例:代购，代驾，代喝，代打 ,就摘抄别人的用例：硬抄，你就硬抄
+- @desc: 代理/委托模式 :没有资源没时间，得找别人来帮忙
  */
 class ProxyPattern {
 

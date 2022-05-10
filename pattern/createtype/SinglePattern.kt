@@ -8,9 +8,9 @@ package com.fbkj.composedemo.pattern.createtype
  */
 class SinglePattern {
 
-    companion object{
-        @Volatile// volatile 保证线程可见性和禁止指令重排序,多线程不安全
-        var INSTANCE : SinglePattern?=null
+    companion object {
+        @Volatile// volatile 保证线程可见性和禁止指令重排序,多线程不安全,且确保不会有其它线程干扰
+        var INSTANCE: SinglePattern? = null
 
         fun getInstance() =
             INSTANCE ?: synchronized(SinglePattern::class.java) {//完整是两判空一同步
